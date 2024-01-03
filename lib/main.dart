@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'tabBar1.dart';
-import 'tabBar2.dart';
+import 'tab_bar1.dart';
+import 'tab_bar2.dart';
 
 void main() {
   runApp(const MyApp());
