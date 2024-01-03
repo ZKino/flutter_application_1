@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'pages/home.dart';
-import 'pages/news.dart';
-import 'pages/settings.dart';
+import 'pages/home/home.dart';
+import 'pages/news/news.dart';
+import 'pages/settings/settings.dart';
 
 class TabBar1 extends StatefulWidget {
   const TabBar1({super.key});
@@ -19,7 +19,13 @@ class _TabBar1State extends State<TabBar1> with AutomaticKeepAliveClientMixin {
   final List<Widget> _pages = <Widget>[
     const HomePage(),
     const NewsPage(),
-    const SettingsPage()
+    const SettingsPage(),
+  ];
+
+  final List<String> _titles = <String>[
+    '首页',
+    '新闻',
+    '设置',
   ];
 
   void _onItemTapped(int index) {
@@ -32,6 +38,9 @@ class _TabBar1State extends State<TabBar1> with AutomaticKeepAliveClientMixin {
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
+      appBar: AppBar(
+        title: Text(_titles[_currentIndex]),
+      ),
       body: PageView.builder(
         itemCount: _pages.length,
         physics: const NeverScrollableScrollPhysics(),

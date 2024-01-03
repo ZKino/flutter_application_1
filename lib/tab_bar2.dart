@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'pages/home.dart';
-import 'pages/news.dart';
-import 'pages/settings.dart';
+import 'pages/home/home.dart';
+import 'pages/news/news.dart';
+import 'pages/settings/settings.dart';
 
 class TabBar2 extends StatefulWidget {
   const TabBar2({super.key});
