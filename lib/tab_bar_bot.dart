@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'pages/home/home.dart';
 import 'pages/news/news.dart';
 import 'pages/settings/settings.dart';
+import 'pages/training/training.dart';
 
-class TabBar1 extends StatefulWidget {
-  const TabBar1({super.key});
+class TabBarBot extends StatefulWidget {
+  const TabBarBot({super.key});
 
   @override
-  State<TabBar1> createState() => _TabBar1State();
+  State<TabBarBot> createState() => _TabBarBotState();
 }
 
-class _TabBar1State extends State<TabBar1> with AutomaticKeepAliveClientMixin {
-  @override
-  bool get wantKeepAlive => true;
+class _TabBarBotState extends State<TabBarBot> {
 
   int _currentIndex = 0;
 
@@ -20,12 +19,14 @@ class _TabBar1State extends State<TabBar1> with AutomaticKeepAliveClientMixin {
     const HomePage(),
     const NewsPage(),
     const SettingsPage(),
+    const TrainingPage(),
   ];
 
   final List<String> _titles = <String>[
     '首页',
     '新闻',
     '设置',
+    '训练',
   ];
 
   void _onItemTapped(int index) {
@@ -36,24 +37,19 @@ class _TabBar1State extends State<TabBar1> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(_titles[_currentIndex]),
       ),
-      body: PageView.builder(
-        itemCount: _pages.length,
-        physics: const NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) {
-          return _pages[_currentIndex];
-        },
-      ),
+      body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: '首页'),
           BottomNavigationBarItem(icon: Icon(Icons.camera), label: '新闻'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: '设置'),
+          BottomNavigationBarItem(icon: Icon(Icons.edit), label: '训练'),
         ],
+        type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         selectedItemColor: Colors.teal,
         showUnselectedLabels: true,

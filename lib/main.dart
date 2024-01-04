@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tab_bar1.dart';
-import 'tab_bar2.dart';
+import 'tab_bar_bot.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        primaryColor: Colors.teal,
-      ),
-      home: const TabBar1(),
+    return const MaterialApp(
+      home: TabBarBot(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
