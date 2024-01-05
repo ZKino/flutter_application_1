@@ -32,9 +32,7 @@ class _ButtonSectionState extends State<ButtonSection> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => page,
-            ),
+            MaterialPageRoute(builder: (context) => page),
           );
         },
       ),

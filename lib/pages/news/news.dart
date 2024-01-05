@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widget/animated_container.dart';
+import '../../widgets/animated_container.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({super.key});
