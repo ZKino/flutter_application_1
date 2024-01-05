@@ -11,6 +11,12 @@ class StateManage extends StatefulWidget {
 class _StateManageState extends State<StateManage> {
   String uName = 'Tracy';
 
+  void _onPressedHandler() {
+    setState(() {
+      uName = 'Tracy${Random().nextInt(1000)}';
+    });
+  }
+
   void onChangeHandler(String value) {
     setState(() {
       uName = value;
@@ -27,7 +33,18 @@ class _StateManageState extends State<StateManage> {
         padding: const EdgeInsets.fromLTRB(16, 6, 16, 6),
         child: Column(
           children: [
-            SizedBox(height: 30, child: Text('我是父组件的值：$uName')),
+            SizedBox(
+              height: 100,
+              child: Column(
+                children: [
+                  Text('我是父组件的值：$uName'),
+                  ElevatedButton(
+                    onPressed: _onPressedHandler,
+                    child: const Text('修改父组件的值'),
+                  )
+                ],
+              ),
+            ),
             BoxA(uName: uName),
             const SizedBox(height: 20),
             BoxB(
@@ -101,9 +118,7 @@ class BoxB extends StatefulWidget {
 
 class _BoxBState extends State<BoxB> {
   void _onTapHandler() {
-    final random = Random();
-
-    widget.onChange('Tracy${random.nextInt(10)}');
+    widget.onChange('Tracy${Random().nextInt(10)}');
   }
 
   @override
