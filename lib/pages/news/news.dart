@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widget/animated_container.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({super.key});
@@ -10,27 +11,8 @@ class NewsPage extends StatefulWidget {
 class _NewsPageState extends State<NewsPage> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        ListTile(
-          leading: Icon(Icons.apple),
-          title: Text('苹果'),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          contentPadding: EdgeInsets.all(16),
-        ),
-        ListTile(
-          leading: Icon(Icons.apple),
-          title: Text('苹果'),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          contentPadding: EdgeInsets.all(16),
-        ),
-        ListTile(
-          leading: Icon(Icons.apple),
-          title: Text('苹果'),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          contentPadding: EdgeInsets.all(16),
-        ),
-      ],
+    return const Center(
+      child: AnimatedContainerApp(),
     );
   }
 }
