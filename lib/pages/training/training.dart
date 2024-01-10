@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../state_manage/state_manage.dart';
+import '../widget_base/widget_base.dart';
 
 class TrainingPage extends StatefulWidget {
   const TrainingPage({super.key});
@@ -11,6 +12,7 @@ class TrainingPage extends StatefulWidget {
 class _TrainingPageState extends State<TrainingPage> {
   final List<Map<String, dynamic>> _btns = [
     {'name': '状态管理', 'page': const StateManage()},
+    {'name': '基本组件', 'page': const WidgetBase()},
   ];
 
   @override

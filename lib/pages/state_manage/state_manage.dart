@@ -47,10 +47,7 @@ class _StateManageState extends State<StateManage> {
             ),
             BoxA(uName: uName),
             const SizedBox(height: 20),
-            BoxB(
-              uName: uName,
-              onChange: onChangeHandler,
-            )
+            BoxB(uName: uName, onChange: onChangeHandler)
           ],
         ),
       ),
